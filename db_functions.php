@@ -89,7 +89,7 @@ class DB{
   /*Execute SELECT query.
   For query without parameters, dont send an array of vars.
   For query with parameters, send an array who contain the content of the (?) vars. 
-  Example: DB::SELECT("SELECT * FROM Table WHERE id=? AND name=?",array(1,'MyName'));
+  Example: DB::SELECT("SELECT name FROM Table WHERE age=? AND city=?",array(23,'NYC'));
   The function return the data if the query found something, otherwise it will return 0 if there is no rows or errors. */
   public static function SELECT($query,$var_array)
   { 
@@ -168,7 +168,7 @@ class DB{
  
 
     /*UPDATE data in the DB, the function recive the table name, array with columns and content,
-    and if the query have conditions, the function recive the conditions SQL string, and the conditions content
+    and if the query have conditions, the function recive the conditions SQL string, and the conditions content.
     The function return the affected rows of the query, and if the function didnt succeed, it will return -1.
     Example with conditions: DB::UPDATE("Table",array('name'=>"Davidi Sheleg"),"user_id=? OR user_id=?",array(1,7));
     Example without conditions (update all the rows): DB::UPDATE("Table",array('name'=>"Davidi Sheleg"));  */
